@@ -4,5 +4,5 @@
 - * Club Members Side App (This repo is members app)
 
 - * Admin Side App 
-- front-end :React-native
-- Back-end  : Python django-Rest Api
+- * front-end :React-native
+- * Back-end  : Python django-Rest Api
