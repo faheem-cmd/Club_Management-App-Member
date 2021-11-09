@@ -1,10 +1,19 @@
-import React from 'react'
-import { Text } from 'react-native'
+import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import Navigation from './src/Navigation'
+
+
 
 const App = () => {
   return (
-    <Text>djfdgnbfdgnih</Text>
-  )
-}
 
-export default App;
+
+    <NavigationContainer>
+      <Navigation />
+    </NavigationContainer>
+
+  );
+};
+
+
+export default App
