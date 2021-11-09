@@ -6,6 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
 
 
+
 import HomePageScreen from "./HomePage";
 import MembersScreen from "./Members";
 
@@ -20,12 +21,25 @@ const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
     return (
-        <Drawer.Navigator
-            drawerStyle={{
-                backgroundColor: 'blue',
-                width: 240,
-            }}>
-            <Drawer.Screen name="HomePage" component={HomePageScreen} />
+        <Drawer.Navigator>
+            <Drawer.Screen options={{
+                title: 'Yuva arts & Sports Club',
+                drawerIcon: ({ focused, size }) => (
+                    <Icon
+                        name="account-tie"
+                        size={20}
+                        color={focused ? '#7cc' : '#ccc'}
+                    />
+                ),
+                gestureEnabled: true,
+                headerStyle: {
+                    backgroundColor: '#000080',
+                },
+                headerTintColor: '#fff',
+                headerTitleStyle: {
+                    fontWeight: 'bold',
+                },
+            }} name="HomePage" component={HomePageScreen} />
             <Drawer.Screen name="Members" component={MembersScreen} />
         </Drawer.Navigator>
 
