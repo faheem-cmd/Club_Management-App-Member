@@ -7,9 +7,9 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 
 
 
-import HomePageScreen from "./screens/HomePage";
-import MembersScreen from "./screens/Members";
-import CustomDrawer from "./CustomDrawer";
+import HomePageScreen from "../screens/HomePage";
+import MembersScreen from "../screens/Members";
+import CustomDrawer from "../componants/CustomDrawer";
 
 
 
