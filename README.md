@@ -2,7 +2,8 @@
 - It is a react-native Application for Managing club oraganisation members,finance,events,performance etc...
 # The Project has include Two side apps
 - * Club Members Side App (This repo is members app)
+- * Admin Side App
 
-- * Admin Side App 
-- * front-end :React-native
+- * front-end - memeber :React-native
+- * front-end - admin : Flutter
 - * Back-end  : Python django-Rest Api
