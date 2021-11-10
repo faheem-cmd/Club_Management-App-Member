@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button } from 'react-native';
+import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button,StatusBar } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -29,6 +29,7 @@ const CustomDrawer = props => {
 
     return (
         <View style={{ flex: 1 }}>
+            <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "tomato" translucent = {true}/>
             <DrawerContentScrollView
                 {...props}
                 contentContainerStyle={{ backgroundColor: '#8200d6' }}>
