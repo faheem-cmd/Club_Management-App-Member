@@ -1,11 +1,32 @@
 import React from 'react';
-import { View, Text, ImageBackground, Image, TouchableOpacity, } from 'react-native';
+import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 const CustomDrawer = props => {
+
+    const onShare = async () => {
+        try {
+            const result = await Share.share({
+                message:
+                'https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en',
+            });
+            if (result.action === Share.sharedAction) {
+                if (result.activityType) {
+                    // shared with activity type of result.activityType
+                } else {
+                    // shared
+                }
+            } else if (result.action === Share.dismissedAction) {
+                // dismissed
+            }
+        } catch (error) {
+            alert(error.message);
+        }
+    };
+
     return (
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView
@@ -44,7 +65,7 @@ const CustomDrawer = props => {
                 </View>
             </DrawerContentScrollView>
             <View style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }}>
-                <TouchableOpacity onPress={() => { }} style={{ paddingVertical: 15 }}>
+                <TouchableOpacity onPress={() => onShare()} style={{ paddingVertical: 15 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <Ionicons name="share-social-outline" size={22} />
                         <Text
