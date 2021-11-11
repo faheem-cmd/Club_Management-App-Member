@@ -22,11 +22,11 @@ const Drawer = createDrawerNavigator();
 
 
 const MyDrawer = () => {
-    
+
     return (
         <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}
             screenOptions={{
-                headerShown: true,
+                headerShown: false,
                 drawerActiveBackgroundColor: '#000080',
                 drawerActiveTintColor: '#fff',
                 drawerInactiveTintColor: '#333',
@@ -37,8 +37,8 @@ const MyDrawer = () => {
                 },
             }}>
             <Drawer.Screen options={{
-                headerShown: true,
-                title: 'Yuva arts & Sports Club',
+                headerShown: false,
+                title: 'Home',
                 drawerIcon: ({ focused, size }) => (
                     <Icon
                         name="home"

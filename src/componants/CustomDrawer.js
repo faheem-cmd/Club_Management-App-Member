@@ -29,7 +29,6 @@ const CustomDrawer = props => {
 
     return (
         <View style={{ flex: 1 }}>
-            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
             <DrawerContentScrollView
                 {...props}
                 contentContainerStyle={{ backgroundColor: '#000080' }}>
