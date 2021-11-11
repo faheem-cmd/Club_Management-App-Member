@@ -26,7 +26,7 @@ const MyDrawer = () => {
         <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />}
             screenOptions={{
                 headerShown: true,
-                drawerActiveBackgroundColor: '#aa18ea',
+                drawerActiveBackgroundColor: '#000080',
                 drawerActiveTintColor: '#fff',
                 drawerInactiveTintColor: '#333',
                 drawerLabelStyle: {
@@ -36,12 +36,13 @@ const MyDrawer = () => {
                 },
             }}>
             <Drawer.Screen options={{
+                headerShown: true,
                 title: 'Yuva arts & Sports Club',
                 drawerIcon: ({ focused, size }) => (
                     <Icon
-                        name="account-tie"
+                        name="home"
                         size={20}
-                        color={focused ? '#7cc' : '#ccc'}
+                        color={focused ? 'orange' : '#ccc'}
                     />
                 ),
                 gestureEnabled: true,
@@ -54,12 +55,13 @@ const MyDrawer = () => {
                 },
             }} name="HomePage" component={HomePageScreen} />
             <Drawer.Screen options={{
-                title: 'members',
+                headerShown: false,
+                title: 'Members',
                 drawerIcon: ({ focused, size }) => (
                     <Icon
                         name="account-tie"
                         size={20}
-                        color={focused ? '#7cc' : '#ccc'}
+                        color={focused ? 'orange' : '#ccc'}
                     />
                 ),
                 gestureEnabled: true,

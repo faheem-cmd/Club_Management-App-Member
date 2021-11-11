@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button,StatusBar } from 'react-native';
+import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button, StatusBar } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -11,7 +11,7 @@ const CustomDrawer = props => {
         try {
             const result = await Share.share({
                 message:
-                'https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en',
+                    'https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en',
             });
             if (result.action === Share.sharedAction) {
                 if (result.activityType) {
@@ -29,17 +29,29 @@ const CustomDrawer = props => {
 
     return (
         <View style={{ flex: 1 }}>
-            <StatusBar barStyle = "dark-content" hidden = {false} backgroundColor = "tomato" translucent = {true}/>
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
             <DrawerContentScrollView
                 {...props}
-                contentContainerStyle={{ backgroundColor: '#8200d6' }}>
+                contentContainerStyle={{ backgroundColor: '#000080' }}>
                 <ImageBackground
-                    source={{ uri: 'https://keralatourpackagesguide.com/wp-content/uploads/2017/03/places-trivandrum.jpg' }}
+                    source={{ uri: 'https://wallpapercave.com/dwp2x/45DVkzT.jpg' }}
                     style={{ padding: 20 }}>
+                    <View style={{alignItems: 'flex-end'}}>
+                        <TouchableOpacity style={{flexDirection: 'row',alignItems: 'center'}}>
+                        <Text style={{
+                            color: 'orange',
+                            fontSize: 12,
+                            fontFamily: 'Roboto-Medium',
+                            fontWeight: 'bold',
+                        }}> Edit Profile</Text>
+                        <Ionicons name="pencil" color={'orange'} size={12} style={{paddingLeft:4}} />
+                        </TouchableOpacity>
+                    </View>
                     <Image
-                        source={{ uri: 'https://keralatourpackagesguide.com/wp-content/uploads/2017/03/places-trivandrum.jpg' }}
+                        source={{ uri: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg' }}
                         style={{ height: 80, width: 80, borderRadius: 40, marginBottom: 10 }}
                     />
+
                     <Text
                         style={{
                             color: '#fff',
@@ -52,13 +64,13 @@ const CustomDrawer = props => {
                     <View style={{ flexDirection: 'row' }}>
                         <Text
                             style={{
-                                color: '#fff',
+                                color: 'orange',
                                 fontFamily: 'Roboto-Regular',
                                 marginRight: 5,
                             }}>
-                            280 Coins
+                            Secretery
                         </Text>
-                        <FontAwesome5 name="coins" size={14} color="#fff" />
+                        <FontAwesome5 name="coins" size={14} color="orange" />
                     </View>
                 </ImageBackground>
                 <View style={{ flex: 1, backgroundColor: '#fff', paddingTop: 10 }}>
