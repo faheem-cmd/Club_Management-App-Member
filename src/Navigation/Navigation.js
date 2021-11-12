@@ -11,6 +11,8 @@ import HomePageScreen from "../screens/HomePage";
 import MembersScreen from "../screens/Members";
 import CustomDrawer from "../componants/CustomDrawer";
 import LoginScreen from "../screens/Login";
+import SignupScreen from "../screens/Signup";
+
 
 
 
@@ -87,6 +89,7 @@ const Navigation = () => {
 
         <Stack.Navigator >
             <Stack.Screen name="Login" options={{ headerShown: false }} component={LoginScreen} />
+            <Stack.Screen name="Signup" options={{ headerShown: false }} component={SignupScreen} />
             <Stack.Screen name="Home" options={{ headerShown: false }} component={MyDrawer} />
             <Stack.Screen name="Members" options={{ headerShown: false }} component={MembersScreen} />
             <Stack.Screen name="CustomDrawer" options={{ headerShown: false }} component={CustomDrawer} />

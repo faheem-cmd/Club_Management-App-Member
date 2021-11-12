@@ -4,26 +4,35 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 
-const Login = ({ navigation}) => {
+const Signup = ({ navigation}) => {
 
     const [hidePass, setHidePass] = useState(true);
 
 
     return (
         <View style={styles.container}>
-            {/* <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} /> */}
-            <ScrollView showVerticalScroll={false} >
-                <View style={styles.subContainer}>
-                    <View style={styles.imageView}>
-                        <Image style={styles.image} source={require('../assets/logo.jpg')}>
-                        </Image>
-                    </View>
-                    <View style={styles.title}>
-                        <Text style={{ textAlign: 'center', fontSize: 24, color: '#fff', fontWeight: 'normal' }}>Welcome To Yuva arts & sports club</Text>
-                    </View>
 
+            <ScrollView showVerticalScroll={false} >
+                <TouchableOpacity style={{ paddingLeft: '3%',paddingTop:'4%',width: 70}} onPress={() => navigation.navigate('Login')}>
+                    <Icon name={"arrow-left-bold"} size={32} color={'tomato'} />
+                </TouchableOpacity>
+                <View style={styles.subContainer}>
+                    <View style={{ alignItems: 'center', marginBottom: 5 }}>
+                        <View style={styles.imageView}>
+                            <Image style={styles.image} source={require('../assets/logo.jpg')}>
+                            </Image>
+                        </View>
+                        <View style={styles.title}>
+                            <Text style={{ textAlign: 'center', fontSize: 24, color: '#fff', fontWeight: 'normal' }}>Welcome To Yuva arts & sports club</Text>
+                        </View>
+                    </View>
                     <View style={{ width: '100%', marginLeft: 10, marginBottom: 5, }}>
-                        <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
+                        <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Register </Text>
+                    </View>
+                    <View style={styles.textContainer}>
+                        <Icon name={"email"} size={22} color={'grey'} />
+                        <TextInput placeholder='Email' style={styles.search}>
+                        </TextInput>
                     </View>
                     <View style={styles.textContainer}>
                         <Icon name={"account"} size={22} color={'grey'} />
@@ -41,15 +50,16 @@ const Login = ({ navigation}) => {
                     </View>
                     <View style={{ width: '100%', paddingHorizontal: '20%', }}>
                         <TouchableOpacity style={styles.button}>
-                            <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Sign In</Text>
+                            <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Register</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{ paddingHorizontal: 100,marginVertical:30}}>
-                    <TouchableOpacity style={styles.register} onPress={() => navigation.navigate('Signup')}>
-                        <Text style={{ color: 'white' }}>Don't have an</Text>
+                <View style={{ paddingHorizontal: 100, marginVertical: '8%' }}>
+                    <TouchableOpacity style={styles.register}>
+                        <Text style={{ color: 'white' }}>Already have an</Text>
                         <Text style={{ color: 'tomato' }}>  account ?</Text>
-                        <Text style={{ color: 'white' }}>  Sign Up</Text>
+                        <Text style={{ color: 'white' }}> Sign in</Text>
+
                     </TouchableOpacity>
                 </View>
             </ScrollView>
@@ -70,7 +80,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         padding: '5%',
-        marginVertical: 60,
     },
     imageView: {
         height: 130,
@@ -85,7 +94,7 @@ const styles = StyleSheet.create({
     },
     title: {
         width: 300,
-        marginVertical: 20
+        marginVertical: 10
     },
     search: {
         padding: 0,
@@ -119,4 +128,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Login
+export default Signup
