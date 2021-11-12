@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput ,ScrollView,StatusBar} from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, ScrollView, StatusBar } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -13,46 +13,46 @@ const Login = () => {
         <View style={styles.container}>
             <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
             <ScrollView showVerticalScroll={false} >
-            <View style={styles.subContainer}>
-                <View style={styles.imageView}>
-                    <Image style={styles.image} source={require('../assets/logo.jpg')}>
-                    </Image>
-                </View>
-                <View style={styles.title}>
-                    <Text style={{ textAlign: 'center', fontSize: 24, color: '#fff', fontWeight: 'normal' }}>Welcome To Yuva arts & sports club</Text>
-                </View>
+                <View style={styles.subContainer}>
+                    <View style={styles.imageView}>
+                        <Image style={styles.image} source={require('../assets/logo.jpg')}>
+                        </Image>
+                    </View>
+                    <View style={styles.title}>
+                        <Text style={{ textAlign: 'center', fontSize: 24, color: '#fff', fontWeight: 'normal' }}>Welcome To Yuva arts & sports club</Text>
+                    </View>
 
-                <View style={{ width: '100%', marginLeft: 10 ,marginBottom: 5, }}>
-                    <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
+                    <View style={{ width: '100%', marginLeft: 10, marginBottom: 5, }}>
+                        <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
+                    </View>
+                    <View style={styles.textContainer}>
+                        <Icon name={"account"} size={22} color={'grey'} />
+                        <TextInput placeholder='Username' style={styles.search}>
+                        </TextInput>
+                    </View>
+                    <View style={styles.textContainer}>
+                        <Icon name={"lock"} size={22} color={'grey'} />
+                        <TextInput placeholder='Password' style={styles.search}
+                            maxLength={6}
+                            secureTextEntry={hidePass ? true : false}>
+                        </TextInput>
+                        <Icon name={hidePass ? 'eye-off' : 'eye'} size={22} color={'tomato'}
+                            onPress={() => setHidePass(!hidePass)} />
+                    </View>
+                    <View style={{ width: '100%', paddingHorizontal: '20%', }}>
+                        <TouchableOpacity style={styles.button}>
+                            <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Sign In</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
-                <View style={styles.textContainer}>
-                    <Icon name={"account"} size={22} color={'grey'} />
-                    <TextInput placeholder='Username' style={styles.search}>
-                    </TextInput>
-                </View>
-                <View style={styles.textContainer}>
-                    <Icon name={"lock"} size={22} color={'grey'} />
-                    <TextInput placeholder='Password' style={styles.search}
-                    maxLength={6}
-                        secureTextEntry={hidePass ? true : false}>
-                    </TextInput>
-                    <Icon name={hidePass ? 'eye-off' : 'eye'} size={22} color={'tomato'}
-                        onPress={() => setHidePass(!hidePass)} />
-                </View>
-                <View style={{ width: '100%', paddingHorizontal: '20%',}}>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={{color: '#fff',fontSize:18,fontWeight:'bold'}}>Sign In</Text>
+                <View style={{ paddingHorizontal: 100, flex: 0.5 }}>
+                    <TouchableOpacity style={styles.register}>
+                        <Text style={{ color: 'white' }}>Don't have an</Text>
+                        <Text style={{ color: 'tomato' }}>  account ?</Text>
                     </TouchableOpacity>
                 </View>
-            </View>
-            <View style={{paddingHorizontal:100,flex:0.5}}>
-            <TouchableOpacity style={styles.register}>
-                <Text style={{color:'white'}}>Don't have an</Text>
-                <Text style={{color:'tomato'}}>  account ?</Text>
-            </TouchableOpacity>
-            </View>
             </ScrollView>
-           
+
         </View>
     )
 }
@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'tomato',
         borderRadius: 15,
         alignItems: 'center',
-        marginTop:20
+        marginTop: 20
     },
     register: {
         alignItems: 'center',
