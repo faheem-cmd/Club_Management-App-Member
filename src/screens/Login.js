@@ -1,18 +1,19 @@
 import React, { useState } from 'react'
 import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, ScrollView, StatusBar } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import { Icon } from 'react-native-elements'
 
 
 
-const Login = ({ navigation}) => {
+const Login = ({ navigation }) => {
 
     const [hidePass, setHidePass] = useState(true);
 
 
     return (
         <View style={styles.container}>
-            {/* <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} /> */}
-            <ScrollView showVerticalScroll={false} >
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
+            <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles.subContainer}>
                     <View style={styles.imageView}>
                         <Image style={styles.image} source={require('../assets/logo.jpg')}>
@@ -26,7 +27,7 @@ const Login = ({ navigation}) => {
                         <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
                     </View>
                     <View style={styles.textContainer}>
-                        <Icon name={"account"} size={22} color={'grey'} />
+                        <Icon name={"account"} size={22}  />
                         <TextInput placeholder='Username' style={styles.search}>
                         </TextInput>
                     </View>
@@ -40,12 +41,12 @@ const Login = ({ navigation}) => {
                             onPress={() => setHidePass(!hidePass)} />
                     </View>
                     <View style={{ width: '100%', paddingHorizontal: '20%', }}>
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                             <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Sign In</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{ paddingHorizontal: 100,marginVertical:30}}>
+                <View style={{ paddingHorizontal: 100, marginVertical: 30 }}>
                     <TouchableOpacity style={styles.register} onPress={() => navigation.navigate('Signup')}>
                         <Text style={{ color: 'white' }}>Don't have an</Text>
                         <Text style={{ color: 'tomato' }}>  account ?</Text>
@@ -63,7 +64,7 @@ const styles = StyleSheet.create({
     container: {
         height: '100%',
         width: '100%',
-        backgroundColor: '#2E2252',
+        backgroundColor: '#003',
         justifyContent: 'center'
     },
     subContainer: {

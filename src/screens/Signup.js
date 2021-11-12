@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, ScrollView, StatusBar } from 'react-native'
+import { View, Text, Image, TouchableOpacity, StyleSheet, TextInput, ScrollView } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
@@ -12,12 +12,12 @@ const Signup = ({ navigation}) => {
     return (
         <View style={styles.container}>
 
-            <ScrollView showVerticalScroll={false} >
-                <TouchableOpacity style={{ paddingLeft: '3%',paddingTop:'4%',width: 70}} onPress={() => navigation.navigate('Login')}>
+            <ScrollView showsVerticalScrollIndicator={false} >
+                <TouchableOpacity style={{ paddingLeft: '3%',paddingTop:'4%',width: 70,marginVertical:25}} onPress={() => navigation.navigate('Login')}>
                     <Icon name={"arrow-left-bold"} size={32} color={'tomato'} />
                 </TouchableOpacity>
                 <View style={styles.subContainer}>
-                    <View style={{ alignItems: 'center', marginBottom: 5 }}>
+                    <View style={{ alignItems: 'center', marginBottom: 3 }}>
                         <View style={styles.imageView}>
                             <Image style={styles.image} source={require('../assets/logo.jpg')}>
                             </Image>
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     container: {
         height: '100%',
         width: '100%',
-        backgroundColor: '#2E2252',
+        backgroundColor: '#003',
         justifyContent: 'center'
     },
     subContainer: {

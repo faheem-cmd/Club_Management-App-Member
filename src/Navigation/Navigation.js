@@ -2,8 +2,10 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs'
+import { Icon } from 'react-native-elements'
+
 
 
 
@@ -45,9 +47,11 @@ const MyDrawer = () => {
                 title: 'Home',
                 drawerIcon: ({ focused, size }) => (
                     <Icon
-                        name="home"
-                        size={20}
-                        color={focused ? 'orange' : '#ccc'}
+                        revised
+                        name='home'
+                        type='font-awesome'
+                        size={24}
+                        color={focused ? 'tomato' : '#ccc'}
                     />
                 ),
                 gestureEnabled: true,
@@ -64,9 +68,11 @@ const MyDrawer = () => {
                 title: 'Members',
                 drawerIcon: ({ focused, size }) => (
                     <Icon
-                        name="account-tie"
+                        revised
+                        name='users'
+                        type='font-awesome'
                         size={20}
-                        color={focused ? 'orange' : '#ccc'}
+                        color={focused ? 'tomato' : '#ccc'}
                     />
                 ),
                 gestureEnabled: true,
@@ -89,10 +95,11 @@ const Navigation = () => {
 
         <Stack.Navigator >
             <Stack.Screen name="Login" options={{ headerShown: false }} component={LoginScreen} />
-            <Stack.Screen name="Signup" options={{ headerShown: false }} component={SignupScreen} />
             <Stack.Screen name="Home" options={{ headerShown: false }} component={MyDrawer} />
+            <Stack.Screen name="Signup" options={{ headerShown: false }} component={SignupScreen} />
             <Stack.Screen name="Members" options={{ headerShown: false }} component={MembersScreen} />
             <Stack.Screen name="CustomDrawer" options={{ headerShown: false }} component={CustomDrawer} />
+
 
 
         </Stack.Navigator>
