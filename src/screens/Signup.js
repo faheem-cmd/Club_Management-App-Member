@@ -17,7 +17,7 @@ const Signup = ({ navigation}) => {
                     <Icon name={"arrow-left-bold"} size={32} color={'tomato'} />
                 </TouchableOpacity>
                 <View style={styles.subContainer}>
-                    <View style={{ alignItems: 'center', marginBottom: 3 }}>
+                    <View style={{ alignItems: 'center', marginBottom: 3}}>
                         <View style={styles.imageView}>
                             <Image style={styles.image} source={require('../assets/logo.jpg')}>
                             </Image>

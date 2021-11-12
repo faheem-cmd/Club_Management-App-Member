@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, ImageBackground, Image, TouchableOpacity, Share, Button, StatusBar } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, } from '@react-navigation/drawer';
+import { Icon } from 'react-native-elements'
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -35,10 +36,10 @@ const CustomDrawer = props => {
                 contentContainerStyle={{ backgroundColor: 'tomato' }}>
                 <ImageBackground
                     source={require('../assets/pic.jpg')}
-                    style={{ height: 200,}}>
+                    style={{ height: 200, }}>
                     <View style={{
                         backgroundColor: 'rgba(52, 52, 52, 0.6)',
-                        height: 200,padding:20
+                        height: 200, padding: 20
                     }}>
                         <View style={{ alignItems: 'flex-end' }}>
                             <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
@@ -100,7 +101,11 @@ const CustomDrawer = props => {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => { }} style={{ paddingVertical: 15 }}>
                     <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                        <Ionicons name="exit-outline" size={22} />
+                        <Icon
+                            revised
+                            name='sign-out'
+                            type='font-awesome'
+                            color='tomato' />
                         <Text
                             style={{
                                 fontSize: 15,
