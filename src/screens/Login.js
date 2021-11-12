@@ -22,8 +22,8 @@ const Login = () => {
                     <Text style={{ textAlign: 'center', fontSize: 24, color: '#fff', fontWeight: 'normal' }}>Welcome To Yuva arts & sports club</Text>
                 </View>
 
-                <View style={{ width: '100%', marginLeft: 10 }}>
-                    <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24 }}>Login </Text>
+                <View style={{ width: '100%', marginLeft: 10 ,marginBottom: 5, }}>
+                    <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
                 </View>
                 <View style={styles.textContainer}>
                     <Icon name={"account"} size={22} color={'grey'} />
@@ -45,13 +45,14 @@ const Login = () => {
                     </TouchableOpacity>
                 </View>
             </View>
-            </ScrollView>
             <View style={{paddingHorizontal:100,flex:0.5}}>
             <TouchableOpacity style={styles.register}>
                 <Text style={{color:'white'}}>Don't have an</Text>
                 <Text style={{color:'tomato'}}>  account ?</Text>
             </TouchableOpacity>
             </View>
+            </ScrollView>
+           
         </View>
     )
 }
