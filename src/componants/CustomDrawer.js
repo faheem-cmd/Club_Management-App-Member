@@ -31,45 +31,52 @@ const CustomDrawer = props => {
         <View style={{ flex: 1 }}>
             <DrawerContentScrollView
                 {...props}
-                contentContainerStyle={{ backgroundColor: '#000080' }}>
+                contentContainerStyle={{ backgroundColor: 'rgba(52, 52, 52, 0.5)' }}>
                 <ImageBackground
-                    source={{ uri: 'https://wallpapercave.com/dwp2x/45DVkzT.jpg' }}
-                    style={{ padding: 20 }}>
-                    <View style={{alignItems: 'flex-end'}}>
-                        <TouchableOpacity style={{flexDirection: 'row',alignItems: 'center'}}>
-                        <Text style={{
-                            color: 'orange',
-                            fontSize: 12,
-                            fontFamily: 'Roboto-Medium',
-                            fontWeight: 'bold',
-                        }}> Edit Profile</Text>
-                        <Ionicons name="pencil" color={'orange'} size={12} style={{paddingLeft:4}} />
-                        </TouchableOpacity>
-                    </View>
-                    <Image
-                        source={{ uri: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg' }}
-                        style={{ height: 80, width: 80, borderRadius: 40, marginBottom: 10 }}
-                    />
+                    source={require('../assets/pic.jpg')}
+                    style={{ height: 200,}}>
+                    <View style={{
+                        backgroundColor: 'rgba(52, 52, 52, 0.6)',
+                        height: 200,padding:20
+                    }}>
+                        <View style={{ alignItems: 'flex-end' }}>
+                            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                <Text style={{
+                                    color: 'orange',
+                                    fontSize: 12,
+                                    fontFamily: 'Roboto-Medium',
+                                    fontWeight: 'bold',
+                                }}> Edit Profile</Text>
+                                <Ionicons name="pencil" color={'orange'} size={12} style={{ paddingLeft: 4 }} />
+                            </TouchableOpacity>
+                        </View>
 
-                    <Text
-                        style={{
-                            color: '#fff',
-                            fontSize: 18,
-                            fontFamily: 'Roboto-Medium',
-                            marginBottom: 5,
-                        }}>
-                        John Doe
-                    </Text>
-                    <View style={{ flexDirection: 'row' }}>
+                        <Image
+                            source={{ uri: 'https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg' }}
+                            style={{ height: 80, width: 80, borderRadius: 40, marginBottom: 10 }}
+                        />
+
                         <Text
                             style={{
-                                color: 'orange',
-                                fontFamily: 'Roboto-Regular',
-                                marginRight: 5,
+                                color: '#fff',
+                                fontSize: 18,
+                                fontFamily: 'Roboto-Medium',
+                                marginBottom: 5,
+                                fontWeight: 'bold'
                             }}>
-                            Secretery
+                            John Doe
                         </Text>
-                        <FontAwesome5 name="coins" size={14} color="orange" />
+                        <View style={{ flexDirection: 'row' }}>
+                            <Text
+                                style={{
+                                    color: 'orange',
+                                    fontFamily: 'Roboto-Regular',
+                                    marginRight: 5,
+                                }}>
+                                Secretery
+                            </Text>
+                            <FontAwesome5 name="coins" size={14} color="orange" />
+                        </View>
                     </View>
                 </ImageBackground>
                 <View style={{ flex: 1, backgroundColor: '#fff', paddingTop: 10 }}>
