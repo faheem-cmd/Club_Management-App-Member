@@ -12,7 +12,7 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
+            {/* <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} /> */}
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles.subContainer}>
                     <View style={styles.imageView}>

@@ -14,6 +14,8 @@ import MembersScreen from "../screens/Members";
 import CustomDrawer from "../componants/CustomDrawer";
 import LoginScreen from "../screens/Login";
 import SignupScreen from "../screens/Signup";
+import ContactScreen from "../screens/Contact";
+
 
 
 
@@ -99,6 +101,8 @@ const Navigation = () => {
             <Stack.Screen name="Signup" options={{ headerShown: false }} component={SignupScreen} />
             <Stack.Screen name="Members" options={{ headerShown: false }} component={MembersScreen} />
             <Stack.Screen name="CustomDrawer" options={{ headerShown: false }} component={CustomDrawer} />
+            <Stack.Screen name="Contact" options={{ headerShown: false }} component={ContactScreen} />
+
 
 
 
