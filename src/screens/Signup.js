@@ -48,7 +48,7 @@ const Signup = ({ navigation}) => {
                         <Icon name={hidePass ? 'eye-off' : 'eye'} size={22} color={'tomato'}
                             onPress={() => setHidePass(!hidePass)} />
                     </View>
-                    <View style={{ width: '100%', paddingHorizontal: '20%', }}>
+                    <View style={{ width: '100%', paddingHorizontal: '15%' }}>
                         <TouchableOpacity style={styles.button}>
                             <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Register</Text>
                         </TouchableOpacity>

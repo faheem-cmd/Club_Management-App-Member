@@ -40,13 +40,13 @@ const Login = ({ navigation }) => {
                         <Icon name={hidePass ? 'eye-off' : 'eye'} size={22} color={'tomato'}
                             onPress={() => setHidePass(!hidePass)} />
                     </View>
-                    <View style={{ width: '100%', paddingHorizontal: '20%', }}>
+                    <View style={{ width: '100%', paddingHorizontal: '15%', marginVertical:10}}>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                             <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Sign In</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View style={{ paddingHorizontal: 100, marginVertical: 30 }}>
+                <View style={{ paddingHorizontal: 100, marginVertical: '16%' }}>
                     <TouchableOpacity style={styles.register} onPress={() => navigation.navigate('Signup')}>
                         <Text style={{ color: 'white' }}>Don't have an</Text>
                         <Text style={{ color: 'tomato' }}>  account ?</Text>
@@ -111,6 +111,7 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         alignItems: 'center',
         marginTop: 20,
+        width: '100%',
     },
     register: {
         alignItems: 'center',
