@@ -21,6 +21,12 @@ const Contact = () => {
     const [emr, setEmr] = useState(false)
     const [health, setHealth] = useState(false)
     const [gym, setGym] = useState(false)
+    const [search, setSearch] = useState('')
+
+
+    const list = [{ id: 1, name: 'mazin' }, { id: 2, name: 'abu' }, { id: 3, name: 'ram' }]
+    const faheem = [{ id: 1, name: 'kazin' }, { id: 2, name: 'mabu' }, { id: 3, name: 'sam' }]
+
 
 
 
@@ -63,6 +69,9 @@ const Contact = () => {
 
     }
 
+    const filterList = (list) => {
+        return list.filter(listItem => listItem.name.toLowerCase().includes(search.toLowerCase()));
+    }
 
 
     return (
@@ -79,7 +88,8 @@ const Contact = () => {
                     </View>
                     <View style={styles.searchContainer}>
                         <View style={styles.search}>
-                            <TextInput placeholder='Search Names...' style={{ padding: 0, width: 250, height: 20, marginRight: 10, }}>
+                            <TextInput placeholder='Search Names...' style={{ padding: 0, width: 250, height: 20, marginRight: 10, }}
+                                onChangeText={(e) => setSearch(e)}>
                             </TextInput>
                             <Icons name={"magnify"} size={22} color={'grey'} style={{ marginRight: 20 }} />
                         </View>
@@ -94,13 +104,23 @@ const Contact = () => {
                             </TouchableOpacity>)}
                     </View>
                 </ScrollView>
-                {all && <Text>all</Text>}
-                {emr && <Text>emr</Text>}
+                {all && <View>
+                    {filterList(list).map((list, index) =>
+                        <View key={list.id}>
+                            <Text key={index}>{list.name}</Text>
+                        </View>)}
+                </View>}
+                {emr && <View>
+                    {filterList(faheem).map((lis, index) =>
+                        <View>
+                            <Text key={index}>{lis.name}</Text>
+                        </View>)}
+                </View>}
                 {health && <Text>health</Text>}
                 {gym && <Text>gym</Text>}
 
-            </ScrollView>
-        </View>
+            </ScrollView >
+        </View >
     )
 }
 

@@ -12,7 +12,7 @@ const Login = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            {/* <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} /> */}
+            <StatusBar barStyle="dark-content" hidden={false} backgroundColor="tomato" translucent={true} />
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles.subContainer}>
                     <View style={styles.imageView}>
@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
                         <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 24, }}>Login </Text>
                     </View>
                     <View style={styles.textContainer}>
-                        <Icon name={"account"} size={22}  />
+                        <Icon name={"account"} size={22} />
                         <TextInput placeholder='Username' style={styles.search}>
                         </TextInput>
                     </View>
@@ -40,7 +40,7 @@ const Login = ({ navigation }) => {
                         <Icon name={hidePass ? 'eye-off' : 'eye'} size={22} color={'tomato'}
                             onPress={() => setHidePass(!hidePass)} />
                     </View>
-                    <View style={{ width: '100%', paddingHorizontal: '15%', marginVertical:10}}>
+                    <View style={{ width: '100%', paddingHorizontal: '15%', marginVertical: 10 }}>
                         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                             <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Sign In</Text>
                         </TouchableOpacity>
