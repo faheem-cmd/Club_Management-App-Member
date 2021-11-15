@@ -46,7 +46,8 @@ const HomePage = ({ navigation }) => {
                     </View>
                     <View style={{ marginVertical: 10 }}>
                         <View style={styles.main}>
-                            <TouchableOpacity style={{ ...styles.card, width: 200, backgroundColor: '#FFF3C5', }}>
+                            <TouchableOpacity style={{ ...styles.card, width: 200, backgroundColor: '#FFF3C5', }}
+                            onPress={() => navigation.navigate('Ask')}>
                                 <View style={{ flexDirection: 'row', width: '100%', flex: 1, alignItems: 'center', paddingHorizontal: '4%', marginTop: 40, }}>
                                     <Text style={{ fontSize: 16, color: 'black', width: 100, marginBottom: 40, fontWeight: 'bold' }}>Ask your club President </Text>
                                     <FontAwesome5 name="user-check" size={80} color="#F79844" />
@@ -132,7 +133,7 @@ const styles = StyleSheet.create({
         width: 92,
         backgroundColor: 'yellow',
         borderRadius: 15,
-        elevation: 6,
+        elevation:2,
         // padding: '4%',
         alignItems: 'center',
         justifyContent: 'center',

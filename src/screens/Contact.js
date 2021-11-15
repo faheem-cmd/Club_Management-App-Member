@@ -42,6 +42,11 @@ const Contact = () => {
 
     ]
 
+    const fire = [{ id: 1, name: 'Ambulance', icon: "ambulance", phone: 'tel:750908331' },
+    { id: 2, name: 'Police', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 3, name: 'Fire', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 4, name: 'School', icon: "police-badge", phone: 'tel:909908331' },]
+
 
 
     const handle = (e) => {
@@ -88,7 +93,7 @@ const Contact = () => {
 
     return (
         <View style={styles.container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.subContainer}>
                     <View style={styles.back}>
                         <TouchableOpacity style={{ width: 40 }}>
@@ -131,7 +136,7 @@ const Contact = () => {
                                 <View style={styles.card} key={item.id}>
                                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
                                         <View style={styles.ambulance}>
-                                            <Icons name={item.icon} size={30} color="black" />
+                                            <Icons name={item.icon} size={30} color="#f1f5f9" />
                                         </View>
                                         <View style={styles.vname}>
                                             <Text style={{ textAlign: 'center', fontWeight: 'bold', color: 'black', fontSize: 18 }} key={index}>{item.name}</Text>
@@ -149,11 +154,34 @@ const Contact = () => {
 
 
                 </View>}
-                {emr && <View>
-                    {filterList(faheem).map((lis, index) =>
-                        <View key={lis.id}>
-                            <Text key={index}>{lis.name}</Text>
-                        </View>)}
+                {emr && <View style={styles.all}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Icons name="chevron-down" size={24} color="black" />
+                        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 14, marginLeft: 4 }}>4 Contacts</Text>
+                    </View>
+                    <View style={{ paddingBottom: 0 }}>
+                        <View style={styles.contact}>
+                            {filterList(fire).map((item, index) =>
+                                <View style={styles.card} key={item.id}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
+                                        <View style={styles.ambulance}>
+                                            <Icons name={item.icon} size={30} color="black" />
+                                        </View>
+                                        <View style={styles.vname}>
+                                            <Text style={{ textAlign: 'center', fontWeight: 'bold', color: 'black', fontSize: 18 }} key={index}>{item.name}</Text>
+                                            <Text style={{ textAlign: 'center', color: 'grey', fontSize: 12 }}>Emergency Service</Text>
+                                        </View>
+                                        <TouchableOpacity onPress={() => { Linking.openURL(item.phone); }}>
+                                            <FontAwesome5 name="phone-square-alt" size={42} color="green" />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>)}
+
+                        </View>
+                    </View>
+
+
+
                 </View>
                 }
                 {health &&
@@ -230,7 +258,7 @@ const styles = StyleSheet.create({
         height: 90,
         backgroundColor: '#fff',
         borderRadius: 20,
-        elevation: 3,
+        elevation:2,
         padding: 20,
         justifyContent: 'center',
         marginVertical: 8
