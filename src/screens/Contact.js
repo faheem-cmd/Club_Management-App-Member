@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView, FlatList } from 'react-native'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import { Icon } from 'react-native-elements'
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { set } from 'react-native-reanimated';
+import { Linking } from 'react-native'
 
 
 
@@ -28,7 +29,18 @@ const Contact = () => {
     const faheem = [{ id: 1, name: 'kazin' }, { id: 2, name: 'mabu' }, { id: 3, name: 'sam' }]
 
 
+    const emergency = [{ id: 1, name: 'Ambulance', icon: "ambulance", phone: 'tel:750908331' },
+    { id: 2, name: 'Police', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 3, name: 'Fire', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 4, name: 'School', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 5, name: 'Women safety', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 6, name: 'Government', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 7, name: 'Medical', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 8, name: 'school', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 9, name: 'School', icon: "police-badge", phone: 'tel:909908331' },
+    { id: 10, name: 'Meddal', icon: "police-badge", phone: 'tel:909908331' },
 
+    ]
 
 
 
@@ -95,31 +107,60 @@ const Contact = () => {
                         </View>
                     </View>
                 </View>
-                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-                    <View style={styles.filter}>
-                        {item.map(item =>
-                            <TouchableOpacity style={select === item.id ? styles.text : { ...styles.text, backgroundColor: 'white' }} key={item.id}
-                                onPress={() => handle(item.id)}>
-                                <Text style={select === item.id ? styles.font : { ...styles.font, color: 'black' }}>{item.name}</Text>
-                            </TouchableOpacity>)}
+
+                <View>
+                    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <View style={styles.filter}>
+                            {item.map(item =>
+                                <TouchableOpacity style={select === item.id ? styles.text : { ...styles.text, backgroundColor: 'white' }} key={item.id}
+                                    onPress={() => handle(item.id)}>
+                                    <Text style={select === item.id ? styles.font : { ...styles.font, color: 'black' }}>{item.name}</Text>
+                                </TouchableOpacity>)}
+                        </View>
+                    </ScrollView>
+                </View>
+
+                {all && <View style={styles.all}>
+                    <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                        <Icons name="chevron-down" size={24} color="black" />
+                        <Text style={{ fontWeight: 'bold', color: 'black', fontSize: 14, marginLeft: 4 }}>17 Contacts</Text>
                     </View>
-                </ScrollView>
-                {all && <View>
-                    {filterList(list).map((list, index) =>
-                        <View key={list.id}>
-                            <Text key={index}>{list.name}</Text>
-                        </View>)}
+                    <View style={{ paddingBottom: 0 }}>
+                        <View style={styles.contact}>
+                            {filterList(emergency).map((item, index) =>
+                                <View style={styles.card} key={item.id}>
+                                    <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-around' }}>
+                                        <View style={styles.ambulance}>
+                                            <Icons name={item.icon} size={30} color="black" />
+                                        </View>
+                                        <View style={styles.vname}>
+                                            <Text style={{ textAlign: 'center', fontWeight: 'bold', color: 'black', fontSize: 18 }} key={index}>{item.name}</Text>
+                                            <Text style={{ textAlign: 'center', color: 'grey', fontSize: 12 }}>Emergency Service</Text>
+                                        </View>
+                                        <TouchableOpacity onPress={() => { Linking.openURL(item.phone); }}>
+                                            <FontAwesome5 name="phone-square-alt" size={42} color="green" />
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>)}
+
+                        </View>
+                    </View>
+
+
+
                 </View>}
                 {emr && <View>
                     {filterList(faheem).map((lis, index) =>
-                        <View>
+                        <View key={lis.id}>
                             <Text key={index}>{lis.name}</Text>
                         </View>)}
-                </View>}
-                {health && <Text>health</Text>}
+                </View>
+                }
+                {health &&
+                    <Text>dj</Text>
+                }
                 {gym && <Text>gym</Text>}
-
-            </ScrollView >
+            </ScrollView>
         </View >
     )
 }
@@ -158,7 +199,8 @@ const styles = StyleSheet.create({
     filter: {
         flexDirection: 'row',
         alignItems: 'center',
-        height: 50,
+        height: 60,
+        // backgroundColor: 'blue',
         marginVertical: 10,
         paddingLeft: 15,
     },
@@ -166,7 +208,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'tomato',
         alignSelf: 'flex-start',
         padding: 12,
-        borderRadius: 10,
+        paddingHorizontal: 20,
+        borderRadius: 20,
         elevation: 4,
         marginRight: 10
     },
@@ -174,6 +217,32 @@ const styles = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         textAlign: 'center'
-    }
+    },
+    all: {
+        padding: '3%'
+
+    },
+    contact: {
+        padding: '3%',
+    },
+    card: {
+        width: '100%',
+        height: 90,
+        backgroundColor: '#fff',
+        borderRadius: 20,
+        elevation: 3,
+        padding: 20,
+        justifyContent: 'center',
+        marginVertical: 8
+    },
+    ambulance: {
+        backgroundColor: 'tomato',
+        width: 50,
+        alignItems: 'center',
+        height: 50,
+        borderRadius: 10,
+        justifyContent: 'center',
+        elevation: 5
+    },
 
 })
