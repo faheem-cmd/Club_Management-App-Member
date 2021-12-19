@@ -47,7 +47,7 @@ const HomePage = ({ navigation }) => {
                     <View style={{ marginVertical: 10 }}>
                         <View style={styles.main}>
                             <TouchableOpacity style={{ ...styles.card, width: 200, backgroundColor: '#FFF3C5', }}
-                            onPress={() => navigation.navigate('Ask')}>
+                                onPress={() => navigation.navigate('Ask')}>
                                 <View style={{ flexDirection: 'row', width: '100%', flex: 1, alignItems: 'center', paddingHorizontal: '4%', marginTop: 40, }}>
                                     <Text style={{ fontSize: 16, color: 'black', width: 100, marginBottom: 40, fontWeight: 'bold' }}>Ask your club President </Text>
                                     <FontAwesome5 name="user-check" size={80} color="#F79844" />
@@ -59,40 +59,51 @@ const HomePage = ({ navigation }) => {
                                 onPress={() => navigation.navigate('Contact')}>
                                 {/* <Ionicons name="share-social-outline" size={22} /> */}
                                 <Icons name="account-box" size={60} color="#3A49BC" />
-                            <Text style={{ textAlign: 'center', color: 'black', marginTop: 5, fontWeight: 'bold' }}>Important contacts</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#FFE5E4' }}>
-                            <FontAwesome5 name="tint" size={45} color={'#E84C4C'} />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Blood Bank</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#CFFFED' }}>
-                            <FontAwesome5 name="university" size={45} color="#2EC48B" />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Institutions</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#E2FFC5' }}>
-                            <FontAwesome5 name="download" size={45} color="#4BAE4F" />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Downloads</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#F3DBFF' }}>
-                            <FontAwesome5 name="tshirt" size={45} color="#A244D1" />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Dress Bank</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#E2ECFF' }}>
-                            <Icons name={"book-open-page-variant"} size={55} color={'#455E90'} />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Book Bank</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{ ...styles.card, backgroundColor: '#D9FBFF' }}>
-                            <Icons name={"medical-bag"} size={55} color={'#29B6C9'} />
-                            <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Medical</Text>
-                        </TouchableOpacity>
+                                <Text style={{ textAlign: 'center', color: 'black', marginTop: 5, fontWeight: 'bold' }}>Important contacts</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#FFE5E4' }}>
+                                <FontAwesome5 name="tint" size={45} color={'#E84C4C'} />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Blood Bank</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#CFFFED' }}>
+                                <FontAwesome5 name="university" size={45} color="#2EC48B" />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Institutions</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#E2FFC5' }}>
+                                <FontAwesome5 name="download" size={45} color="#4BAE4F" />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Downloads</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#F3DBFF' }}>
+                                <FontAwesome5 name="tshirt" size={45} color="#A244D1" />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Dress Bank</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#E2ECFF' }}>
+                                <Icons name={"book-open-page-variant"} size={55} color={'#455E90'} />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Book Bank</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{ ...styles.card, backgroundColor: '#D9FBFF' }}>
+                                <Icons name={"medical-bag"} size={55} color={'#29B6C9'} />
+                                <Text style={{ textAlign: 'center', color: 'black', fontWeight: 'bold', marginTop: 5 }}>Medical</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                    <View style={styles.news}>
+                        <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 20 }}>News Feed</Text>
+                        <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 20 }}>See All</Text>
                     </View>
                 </View>
-                <View style={styles.news}>
-                    <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 20 }}>News Feed</Text>
-                    <Text style={{ color: 'tomato', fontWeight: 'bold', fontSize: 20 }}>See All</Text>
-                </View>
-        </View>
             </ScrollView >
+            {/* <View style={styles.bottomBar}>
+                <Text>jief</Text>
+                <Text style={styles.bottomBarText}>
+                    10Items Selected
+                </Text>
+                <TouchableOpacity
+                    activeOpacity={0.8}>
+
+                    <Text style={styles.bottomBtnText}>Proceed</Text>
+                </TouchableOpacity>
+            </View> */}
         </View >
     )
 }
@@ -133,7 +144,7 @@ const styles = StyleSheet.create({
         width: 92,
         backgroundColor: 'yellow',
         borderRadius: 15,
-        elevation:2,
+        elevation: 2,
         // padding: '4%',
         alignItems: 'center',
         justifyContent: 'center',
@@ -144,5 +155,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-    }
+    },
+    bottomBar: {
+        position: 'absolute',
+        bottom: 0,
+        width: '100%',
+        height:300,
+        elevation:6,
+        padding: 20,
+        backgroundColor: 'tomato',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+    },
+    bottomBarText: {
+        color: '#fff',
+        fontSize: 16,
+        fontWeight: 'bold',
+    },
+    bottomBarBtn: {
+        backgroundColor: '#fff',
+        paddingHorizontal: '5%',
+        paddingVertical: '1%',
+        borderRadius: 5,
+    },
+    bottomBtnText: {
+        fontWeight: 'bold',
+        fontSize: 16,
+    },
 })
